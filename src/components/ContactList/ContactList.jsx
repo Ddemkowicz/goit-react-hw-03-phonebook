@@ -11,19 +11,22 @@ export default class ContactList extends Component {
     const { filteredContacts } = this.props;
 
     return (
-      <ul>
-        {filteredContacts.map(contact => (
-          <li key={contact.id}>
-            {contact.name} : {contact.number}
-            <button
-              onClick={() => this.handleDeleteClick(contact.id)}
-              type="button"
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+      <>
+        <h2>Contacts</h2>
+        <ul>
+          {filteredContacts.map(contact => (
+            <li key={contact.id}>
+              {contact.name} : {contact.number}
+              <button
+                onClick={() => this.handleDeleteClick(contact.id)}
+                type="button"
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      </>
     );
   }
 }

@@ -7,14 +7,17 @@ export default class Filter extends Component {
     const { filter, handleFilterChange } = this.props;
 
     return (
-      <input
-        className={css.input}
-        type="text"
-        name="filter"
-        value={filter}
-        onChange={handleFilterChange}
-        placeholder="Search contacts"
-      />
+      <>
+        <h3>Filter</h3>
+        <input
+          className={css.input}
+          type="text"
+          name="filter"
+          value={filter}
+          onChange={handleFilterChange}
+          placeholder="Search contacts"
+        />
+      </>
     );
   }
 }

@@ -14,6 +14,7 @@ export default class ContactForm extends Component {
 
     return (
       <form onSubmit={handleFormSubmit}>
+        <h1>Phonebook</h1>
         <div className={css.addContactFrom}>
           <label className={css.label}>Name: </label>
           <input
