@@ -8,13 +8,13 @@ export default class ContactList extends Component {
   };
 
   render() {
-    const { filteredContacts } = this.props;
+    const { contacts } = this.props;
 
     return (
       <>
         <h2>Contacts</h2>
         <ul>
-          {filteredContacts.map(contact => (
+          {contacts.map(contact => (
             <li key={contact.id}>
               {contact.name} : {contact.number}
               <button

@@ -93,7 +93,7 @@ export default class App extends Component {
   componentDidMount() {
     const { contacts, filter } = this.state;
     const filteredContacts = this.getFilteredContacts(contacts, filter);
-    this.setState({ filteredContacts });
+    this.setState({ contacts: filteredContacts });
 
     const storedContacts = localStorage.getItem('contacts');
     if (storedContacts) {
@@ -108,7 +108,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { filteredContacts, name, number, filter } = this.state;
+    const { contacts, name, number, filter } = this.state;
     return (
       <div
         style={{
@@ -131,7 +131,9 @@ export default class App extends Component {
         />
         <Filter filter={filter} handleFilterChange={this.handleFilterChange} />
         <ContactList
-          filteredContacts={filteredContacts}
+          // filteredContacts={filteredContacts}
+          contacts={contacts}
+          filter={filter}
           handleContactDelete={this.handleContactDelete}
         />
       </div>
